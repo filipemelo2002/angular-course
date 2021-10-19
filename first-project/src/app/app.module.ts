@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { CoursesModule } from './courses/courses.module';
 import { MyFristComponent } from './my-first/my-first.component';
 import { MySecondComponent } from './my-second/my-second.component';
 
@@ -12,7 +13,8 @@ import { MySecondComponent } from './my-second/my-second.component';
     MySecondComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CoursesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
