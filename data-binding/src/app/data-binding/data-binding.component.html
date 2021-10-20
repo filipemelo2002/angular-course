@@ -1,5 +1,5 @@
 <section class="property-binding">
-  <article>
+  <!-- <article>
     <h3> Interpolation / Interpolação</h3>
     <p>String renderizada com interpolação: {{ url }}</p>
     <p>Resultado de 1 + 1 é {{ 1+1 }}</p>
@@ -10,11 +10,77 @@
   <article>
     <h3>Property Binding</h3>
     <img src="{{ imageURL }}" alt="" />
-    <!--
-      Os colchetes servem como um helper para o que de fato o Angular faz,
-      explicitado na linha 18.
-    -->
     <img [src]="imageURL" alt="" />
     <img bind-src="imageURL" alt="" />
+  </article> -->
+
+
+  <article>
+    <h3>Class e Style Binding</h3>
+    <div>
+      Selecione uma classe:
+      <select #classe (change)="0">
+        <option value="alert-primary">Primary</option>
+        <option value="alert-secondary">Secondary</option>
+        <option value="alert-success">Success</option>
+        <option value="alert-danger">Danger</option>
+        <option value="alert-warning">Warning</option>
+        <option value="alert-info">Infor</option>
+        <option value="alert-light">Light</option>
+        <option value="alert-dark">Dark</option>
+      </select>
+      <br />
+      <br />
+      <div class="alert {{ classe.value }}">
+        Texto colorido conforme o valor do combobox.
+      </div>
+      <div class="alert" role="alert"
+        [class.alert-primary]="classe.value == 'alert-primary'"
+      >
+        A simple primary alert—check it out!
+      </div>
+      <div class="alert" role="alert"
+        [class.alert-secondary]="classe.value == 'alert-secondary'"
+      >
+        A simple secondary alert—check it out!
+      </div>
+      <div class="alert" role="alert"
+        [class.alert-success]="classe.value == 'alert-success'"
+      >
+        A simple success alert—check it out!
+      </div>
+      <div class="alert" role="alert"
+        [class.alert-danger]="classe.value == 'alert-danger'"
+      >
+        A simple danger alert—check it out!
+      </div>
+      <div class="alert" role="alert"
+        [class.alert-warning]="classe.value == 'alert-warning'"
+      >
+        A simple warning alert—check it out!
+      </div>
+      <div class="alert" role="alert"
+        [class.alert-info]="classe.value == 'alert-info'"
+      >
+        A simple info alert—check it out!
+      </div>
+      <div class="alert" role="alert"
+        [class.alert-light]="classe.value == 'alert-light'"
+      >
+        A simple light alert—check it out!
+      </div>
+      <div class="alert" role="alert"
+        [class.alert-dark]="classe.value == 'alert-dark'"
+      >
+        A simple dark alert—check it out!
+      </div>
+
+      <div class="alert alert-danger" role="alert"
+        [style.display] = "classe.value === 'alert-danger' ? 'block' : 'none'"
+      >
+        A simple danger alert—check it out!
+      </div>
+
+    </div>
   </article>
 </section>
