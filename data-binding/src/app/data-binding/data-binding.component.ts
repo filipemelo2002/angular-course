@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-data-binding',
@@ -10,6 +10,10 @@ export class DataBindingComponent implements OnInit {
   angularCourse = true;
   imageURL = 'http://lorempixel.com/400/200/nature/';
 
+  valorAtual: string = '';
+  valorSalvo: String = '';
+
+  isMouseOver: boolean = false;
   constructor() { }
 
   getValue() {
@@ -18,6 +22,22 @@ export class DataBindingComponent implements OnInit {
 
   likeCourse() {
     return true;
+  }
+
+  clickButton() {
+    alert('Botão clicado')
+  }
+
+  onKeyUp(evento:KeyboardEvent) {
+    this.valorAtual = (<HTMLInputElement>evento.target).value;
+  }
+
+  salvarValor(valor:string) {
+    this.valorSalvo = valor;
+  }
+
+  onMouseOverOut() {
+    this.isMouseOver = !this.isMouseOver;
   }
 
   ngOnInit(): void {
